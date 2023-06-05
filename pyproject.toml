@@ -47,7 +47,7 @@ path = "src/su6_plugin_demo/__about__.py" # <- CHANGE ME
 
 [tool.semantic_release]
 branch = "master"
-version_variable = "src/su6/__about__.py:__version__"
+version_variable = "src/su6_plugin_demo/__about__.py:__version__"
 change_log = "CHANGELOG.md"
 upload_to_repository = false
 upload_to_release = false
