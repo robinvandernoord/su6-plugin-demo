@@ -61,6 +61,13 @@ stop-after-first-failure = false
 coverage = 100
 badge = true
 
+[tool.su6.demo]
+boolean-arg = true
+optional-with-default = "overridden"
+
+[tool.su6.demo.extra]
+more = true
+
 [tool.black]
 target-version = ["py311"]
 line-length = 120
@@ -122,7 +129,8 @@ extend-exclude = ["*.bak/", "venv*/"]
 # bandit -c pyproject.toml -r .
 exclude_dirs = [".bak", "venv"]
 skips = [
-    "B108"  # hard coded /tmp/... files are fine for me tbh
+    "B108",  # hard coded /tmp/... files are fine for me tbh
+    "B101",  # allow assert for the demo methods
 ]
 
 [tool.isort]
