@@ -28,3 +28,15 @@ def test_direct_call():
     assert second()
     assert yet_another()
     assert not subcommand()
+
+def test_with_config():
+    result = runner.invoke(app, ["with-arguments", "...", "--boolean-arg"])
+    assert result.exit_code == 0
+
+    assert "required_arg='...'" in result.stdout
+    assert "boolean_arg=True" in result.stdout
+    assert "boolean_arg=False" not in result.stdout
+    assert "optional_with_default='overridden'" in result.stdout
+    assert "more=MoreDemoConfig(more=True" in result.stdout
+    assert "state=ApplicationState" in result.stdout
+
