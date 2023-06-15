@@ -3,6 +3,7 @@ This module contains an example of both methods of adding commands to su6.
 """
 import typing
 
+from configuraptor import postpone
 from su6.plugins import PluginConfig, print, register, run_tool
 
 # or: from su6 import register_plugin, run_tool
@@ -17,7 +18,7 @@ class MoreDemoConfig(PluginConfig):
     Config that loads 'state' into self.state and loads [tool.su6.demo.extra] from pyproject.toml into self.
     """
 
-    more: bool
+    more: bool = False
 
 
 @register
@@ -26,10 +27,10 @@ class DemoConfig(PluginConfig):
     Config without state, loads [tool.su6.demo] from pyproject.toml into self.
     """
 
-    required_arg: str
-    boolean_arg: bool
+    required_arg: str = postpone()
+    boolean_arg: bool = postpone()
     optional_with_default: typing.Optional[str] = None
-    more: PluginConfig = MoreDemoConfig(more=False)
+    more: PluginConfig = MoreDemoConfig()
 
 
 config = DemoConfig()
