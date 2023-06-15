@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-06-15)
+
+### Fix
+
+* Slightly change config to work with configuraptor ([`755e4de`](https://github.com/robinvandernoord/su6-plugin-demo/commit/755e4de013a8364e69a473d6e1d5f68e6c40c1d6))
+
 ## v0.2.0 (2023-06-08)
 ### Feature
 
