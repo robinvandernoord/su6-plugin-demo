@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-06-20)
+### Feature
+* **310:** Support Python 3.10 ([`22e7081`](https://github.com/robinvandernoord/su6-plugin-demo/commit/22e708110986f3321691ba6576daec7bd87d10bb))
+
 ## v0.2.1 (2023-06-15)
 
 ### Fix
